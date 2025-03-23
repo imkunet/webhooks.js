@@ -75,7 +75,7 @@ source.onmessage = (event) => {
     .verifyAndReceive({
       id: webhookEvent["x-request-id"],
       name: webhookEvent["x-github-event"],
-      signature: webhookEvent["x-hub-signature"],
+      signature: webhookEvent["x-hub-signature-256"],
       payload: JSON.stringify(webhookEvent.body),
     })
     .catch(console.error);
